@@ -1,6 +1,59 @@
-<extension name="form-processor" webpalschematype="wpExtension" id="exte8akmPONBJY1V" groupaccess="all:r" modifiedBy="admin" modified="20150413.084522"><README webpalschematype="wpHtml" id="READiCvJ6jk1po1d" lang="any" modifiedBy="admin" modified="20150413.084522"><h1>WebPal Simple Form Processor</h1>
+<extension name="form-processor" webpalschematype="wpExtension" id="exte9TpEAKZNgBQe" groupaccess="all:r" modifiedBy="admin" modified="20150413.130056"><README webpalschematype="wpHtml" id="READyuAE6uJxcrTg" lang="any" modifiedBy="admin" modified="20150413.120037"><h1>WebPal Simple Form Processor</h1>
 
 <p>Simple but effective form submission routines for standard contact-us type forms.</p>
 
 <p>April 2015: init</p>
-</README><routes webpalschematype="wpAppRouteList" id="routjQOwMomNhEVC" column-widths="85,120,300,100,50,50" modifiedBy="admin" modified="20150413.083546"><route webpalschematype="wpAppRoute" id="routjPyRNyCGw6lC" verb="post" modifiedBy="admin" modified="20150413.083533" pattern="/processemail" controller="FormProcessor/Controllers/FormProcessor@sendEmail"/></routes><controllers webpalschematype="wpAppControllerFolder" id="contVlUV5i2kpVJG" name="controllers" folder-type="php" modifiedBy="admin" modified="20150413.083533"/></extension>
+</README><node-schema webpalschematype="wpPageRaw" id="nodeapJ0fGHGIjvh" lang="any" show-in="main" modifiedBy="admin" modified="20150413.130056">&lt;schema xmlns="http://www.palominosys.com/wpschema"&gt;
+
+  &lt;complexType name="wpPageUJKH7987tuyDFKH" extends="wpPage"&gt;
+    &lt;element name="simple-form" type="FormProcessorSimpleForm"/&gt;
+  &lt;/complexType&gt;
+
+  &lt;complexType name="FormProcessorSimpleForm" edittype="sheet" icon="world.png" lockable="yes"&gt;
+
+    &lt;attribute name="name" use="optional" type="wpName"/&gt;
+    &lt;attribute name="id" use="auto" value="web" type="wpString"/&gt;
+    &lt;attribute name="show-in" use="one-of" type="wpString" value="main,related1,related2,sidebar-left,sidebar-right"/&gt;
+
+  &lt;/complexType&gt;
+&lt;/schema&gt;</node-schema><stylesheet webpalschematype="wpAppStylesheet" id="stylIW5BHY9r7lKB" lang="any" show-in="main" modifiedBy="admin" modified="20150413.115956">&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE xsl:stylesheet [
+&lt;!ENTITY nbsp "&amp;#160;" &gt;
+]&gt;
+
+&lt;!-- (c) 2001-present All Copyrights Palomino Inc.
+This code is for use within web applications powered by WebPal Cloud Server ONLY.
+Use in other Content Management Applications is not permitted.
+Modification of the code below is permitted and encouraged, at your own risk.
+--&gt;
+
+&lt;xsl:stylesheet version="1.0"
+                exclude-result-prefixes="wp php fn xsl"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:php="http://php.net/xsl"
+                xmlns:wp="http://www.palominosys.com/wp"
+                xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                &gt;
+  
+  &lt;xsl:template match="page/simple-form"&gt;
+    &lt;xsl:call-template name="form-processor-sample-form"/&gt;
+  &lt;/xsl:template&gt;
+  
+  &lt;xsl:template name="form-processor-sample-form"&gt;
+    &lt;form method="POST" action="/processemail"&gt;
+      &lt;div&gt;
+        &lt;label for="yourname"&gt;Your Name: &lt;/label&gt;&lt;input name="yourname" value="" type="text"/&gt;        
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;label for="email"&gt;Email: &lt;/label&gt;&lt;input name="email" value="" type="text"/&gt;        
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;label for="phone"&gt;Phone: &lt;/label&gt;&lt;input name="phone" value="" type="text"/&gt;        
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;input type="submit" value="Submit"/&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</stylesheet><routes webpalschematype="wpAppRouteList" id="routmugxrE_BfOgc" column-widths="85,120,300,100,166,50" modifiedBy="admin" modified="20150413.120002"><route webpalschematype="wpAppRoute" id="routd_NFL8oUwLPU" verb="post" modifiedBy="admin" modified="20150413.084748" pattern="/processemail" controller="FormProcessor/Controllers/FormProcessor@sendEmail"/></routes><controllers webpalschematype="wpAppControllerFolder" id="contmxOmYGq6Pn3D" name="controllers" folder-type="php" modifiedBy="admin" modified="20150413.084748"/></extension>

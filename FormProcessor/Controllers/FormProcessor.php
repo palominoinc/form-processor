@@ -4,12 +4,12 @@
  *
  */
 
-use \BaseController;
-use \Redirect;
-
 namespace FormProcessor\Controllers;
 
-class FormProcessor extends \BaseController
+use BaseController;
+use Redirect;
+
+class FormProcessor extends BaseController
 {
   public function sendEmail() {
     // First, make sure the form was posted from a browser. 
@@ -101,7 +101,7 @@ class FormProcessor extends \BaseController
 
     // ---- Send Mail Process -----  //
 
-    $to = 'info-nowhere@webpal.net';
+    $to = 'tech@palominosys.com';
 
     $subject = "{$_POST['subject']}";
     $message = nl2br($this->processPost($_POST, $CSSclasses, 'Submit'));
