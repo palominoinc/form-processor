@@ -1,9 +1,11 @@
-<extension name="form-processor" webpalschematype="wpExtension" id="exte9TpEAKZNgBQe" groupaccess="all:r" modifiedBy="admin" modified="20150413.130056"><README webpalschematype="wpHtml" id="READyuAE6uJxcrTg" lang="any" modifiedBy="admin" modified="20150413.120037"><h1>WebPal Simple Form Processor</h1>
+<extension name="form-processor" webpalschematype="wpExtension" id="exte9TpEAKZNgBQe" groupaccess="all:r" modifiedBy="admin" modified="20150413.130056">
+  <README webpalschematype="wpHtml" id="READyuAE6uJxcrTg" lang="any" modifiedBy="admin" modified="20150413.120037"><h1>WebPal Simple Form Processor</h1>
 
 <p>Simple but effective form submission routines for standard contact-us type forms.</p>
 
 <p>April 2015: init</p>
-</README><node-schema webpalschematype="wpPageRaw" id="nodeapJ0fGHGIjvh" lang="any" show-in="main" modifiedBy="admin" modified="20150413.130056">&lt;schema xmlns="http://www.palominosys.com/wpschema"&gt;
+</README>
+  <node-schema webpalschematype="wpPageRaw" id="nodeapJ0fGHGIjvh" lang="any" show-in="main" modifiedBy="admin" modified="20150413.130056">&lt;schema xmlns="http://www.palominosys.com/wpschema"&gt;
 
   &lt;complexType name="wpPageUJKH7987tuyDFKH" extends="wpPage"&gt;
     &lt;element name="simple-form" type="FormProcessorSimpleForm"/&gt;
