@@ -9,6 +9,8 @@ use \Redirect;
 
 namespace FormProcessor\Controllers;
 
+//test
+
 class FormProcessor extends \BaseController
 {
   public function sendEmail() {
@@ -101,7 +103,7 @@ class FormProcessor extends \BaseController
 
     // ---- Send Mail Process -----  //
 
-    $to = 'info-nowhere@webpal.net';
+    $to = 'markus@palominosys.com';
 
     $subject = "{$_POST['subject']}";
     $message = nl2br($this->processPost($_POST, $CSSclasses, 'Submit'));
